@@ -2,14 +2,20 @@ import { View, StyleSheet, Text } from "react-native";
 import AppPressable from "../components/ui/AppPressable";
 import AppText from "../components/ui/AppText";
 import { colors } from "../styles/colors";
+import { useContext } from "react";
+import { quotesContext } from "../contexts/quotesContext";
 
 export default function HomeScreen() {
+  const { quotes } = useContext(quotesContext);
+
   const handlePress = () => {
     alert("knappen klickades!");
   };
   return (
     <View style={styles.container}>
       <AppText style={styles.title}>Välkommen till din app</AppText>
+      <AppText> {quotes[0].text}</AppText>
+      <AppText> {quotes[0].author}</AppText>
       <AppPressable onPress={handlePress}>
         <AppText>Tryck Här</AppText>
       </AppPressable>
