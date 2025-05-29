@@ -33,6 +33,7 @@ export default function AppPressable({ children, style, ...rest }: Props) {
 
 const styles = StyleSheet.create({
   pressable: {
+    margin: 8,
     backgroundColor: colors.button,
     paddingVertical: 12,
     paddingHorizontal: 20,

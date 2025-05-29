@@ -7,4 +7,9 @@ export const quotesData: QuotesType[] = [
     text: "The journey of a thousand miles begins with a single step.",
     author: "Lao Tzu",
   },
+  {
+    id: "2" /* nanoid() */,
+    text: "blabal.",
+    author: "jaja",
+  },
 ];
