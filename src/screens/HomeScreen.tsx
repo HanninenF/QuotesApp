@@ -4,6 +4,7 @@ import AppText from "../components/ui/AppText";
 import { colors } from "../styles/colors";
 import { useContext } from "react";
 import { quotesContext } from "../contexts/quotesContext";
+import AddQuoteForm from "../components/AddQuoteForm";
 
 export default function HomeScreen() {
   const { quotes, quotesIndex, setQuotesIndex } = useContext(quotesContext);
@@ -24,12 +25,17 @@ export default function HomeScreen() {
       <AppText style={styles.title}>Välkommen till din app</AppText>
       <AppText> {quotes[quotesIndex].text}</AppText>
       <AppText> {quotes[quotesIndex].author}</AppText>
-      <AppPressable onPress={handlePrevious}>
-        <AppText>Previous</AppText>
-      </AppPressable>
-      <AppPressable onPress={handleNext}>
-        <AppText>Next</AppText>
-      </AppPressable>
+      <View style={styles.buttonContainer}>
+        <AppPressable onPress={handlePrevious}>
+          <AppText>Previous</AppText>
+        </AppPressable>
+        <AppPressable onPress={handleNext}>
+          <AppText>Next</AppText>
+        </AppPressable>
+      </View>
+
+      {/* form */}
+      <AddQuoteForm />
       {/*     <AppPressable onPress={handlePress}>
         <AppText>Tryck Här</AppText>
       </AppPressable> */}
@@ -48,5 +54,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     marginBottom: 24,
+  },
+  buttonContainer: {
+    flexDirection: "row",
   },
 });
