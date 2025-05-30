@@ -2,7 +2,7 @@
 import { QuotesType } from "../types/quotesTypes";
 import uuid from "react-native-uuid";
 
-export const quotesData: QuotesType[] = [
+export const rawQuotes: QuotesType[] = [
   {
     id: uuid.v4(),
     text: "The journey of a thousand miles begins with a single step.",
@@ -39,3 +39,10 @@ export const quotesData: QuotesType[] = [
     author: "Theodore Roosevelt",
   },
 ];
+
+const randomIndex = Math.floor(Math.random() * rawQuotes.length);
+const [first] = rawQuotes.splice(randomIndex, 1); /* samma som att skriva:
+const removed = rawQuotes.splice(randomIndex, 1);
+const first = removed[0];
+*/
+export const quotesData: QuotesType[] = [first, ...rawQuotes];
