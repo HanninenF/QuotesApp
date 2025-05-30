@@ -1,5 +1,6 @@
 import { TextProps, Text, StyleSheet } from "react-native";
 import { colors } from "../../styles/colors";
+import { spacing } from "../../styles/globalsStyles";
 
 export default function AppText(props: TextProps) {
   return <Text {...props} style={[styles.text, props.style]} />;
@@ -7,7 +8,7 @@ export default function AppText(props: TextProps) {
 const styles = StyleSheet.create({
   text: {
     color: colors.text,
-    fontSize: 16,
-    marginBottom: 8,
+    fontSize: spacing.large,
+    marginBottom: spacing.small,
   },
 });

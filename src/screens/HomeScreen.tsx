@@ -5,6 +5,7 @@ import { colors } from "../styles/colors";
 import { useContext } from "react";
 import { quotesContext } from "../contexts/quotesContext";
 import AddQuoteForm from "../components/AddQuoteForm";
+import { fontSize, spacing } from "../styles/globalsStyles";
 
 export default function HomeScreen() {
   const { quotes, quotesIndex, setQuotesIndex } = useContext(quotesContext);
@@ -49,11 +50,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
     justifyContent: "center",
     alignItems: "center",
-    padding: 16,
+    padding: spacing.large,
   },
   title: {
-    fontSize: 28,
-    marginBottom: 24,
+    fontSize: fontSize.Xxxl,
+    marginBottom: spacing.Xxl,
   },
   buttonContainer: {
     flexDirection: "row",

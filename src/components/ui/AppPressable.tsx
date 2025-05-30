@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import { colors } from "../../styles/colors";
 import React, { ReactNode } from "react";
+import { spacing } from "../../styles/globalsStyles";
 
 type Props = PressableProps & {
   children: ReactNode;
@@ -33,12 +34,12 @@ export default function AppPressable({ children, style, ...rest }: Props) {
 
 const styles = StyleSheet.create({
   pressable: {
-    marginTop: 16,
-    margin: 8,
+    marginTop: spacing.large,
+    margin: spacing.small,
     backgroundColor: colors.button,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
+    paddingVertical: spacing.medium,
+    paddingHorizontal: spacing.Xl,
+    borderRadius: spacing.small,
     alignItems: "center",
   },
 });
