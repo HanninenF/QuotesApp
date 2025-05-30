@@ -28,7 +28,7 @@ export default function AddQuoteForm() {
   };
 
   return (
-    <View>
+    <View style={styles.form}>
       <TextInput
         placeholder="quote"
         value={newQuote.text}
