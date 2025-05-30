@@ -16,13 +16,14 @@ type Props = PressableProps & {
 export default function AppPressable({ children, style, ...rest }: Props) {
   const combinedStyle = (state: { pressed: boolean }): StyleProp<ViewStyle> => {
     const baseStyle = styles.pressable;
+    const pressedStyle = state.pressed ? styles.pressed : null;
 
     if (typeof style === "function") {
       const dynamicStyle = style(state);
-      return [baseStyle, dynamicStyle];
+      return [baseStyle, pressedStyle, dynamicStyle];
     }
 
-    return [baseStyle, style];
+    return [baseStyle, pressedStyle, style];
   };
 
   return (
@@ -41,5 +42,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.Xl,
     borderRadius: spacing.small,
     alignItems: "center",
+  },
+  pressed: {
+    backgroundColor: colors.buttonDark, // Lägg till den i din färgfil
+    transform: [{ scale: 0.97 }],
   },
 });
